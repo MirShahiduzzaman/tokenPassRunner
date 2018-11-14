@@ -18,9 +18,10 @@ public class TokenPass
         String out = "";
         for(int i =0;i<board.length;i++)
         {
-            out += "Player " + i + ": " + board[i];
+            out += "Player " + i + ": " + board[i] + " ";
         }
         out += "\nCurrent Player: " + currentPlayer;
+        System.out.println(out);
     }
 
     public void distributeCurrentPlayerTokens()
@@ -45,7 +46,7 @@ public class TokenPass
     public void nextPlayer()
     {
         currentPlayer++;
-        if(currentPlayer>board.length)
+        if(currentPlayer>=board.length)
         {
             currentPlayer=0;
         }
@@ -58,7 +59,7 @@ public class TokenPass
         {
             if(board[i]==0)
             {
-                gameOver = currentPlayer;
+                gameOver = board[i];
             }
         }
         return(gameOver);
